@@ -5,15 +5,15 @@ const loader = document.querySelector('.loader');
 
 const key = `461f6c83`;
 
-function getdata() {
-	const inputdata = inputbar.value;
-	const url = `http://www.omdbapi.com/?t=${inputdata}=&apikey=${key}`;
+async function getdata() {
+	const inputdata = await inputbar.value;
+	const url = `http://www.omdbapi.com/?t=${inputdata}&apikey=${key}`;
 
 	if (inputdata.length <= 0) {
 		result.innerHTML = `<h3>Please Enter Movie Name</h3>`;
 	} else {
 		loader.style.display = 'flex';
-		fetch(url)
+		await fetch(url)
 			.then((res) => {
 				return res.json();
 			})
@@ -53,6 +53,7 @@ function getdata() {
 				}
 			})
 			.catch(() => {
+				loader.style.display = 'none';
 				result.innerHTML = `<h3 class="msg">error accured </h3>`;
 			});
 	}

@@ -41,8 +41,7 @@ function getdata() {
                   </div>
                 </div>
           </div>
-          <h3>Genre</h3>
-          <p>${data.Genre}</p>
+         
         <h3>Plot:</h3>
         <p>${data.Plot}</p>
         <h3>Cast:</h3>

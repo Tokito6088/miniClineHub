@@ -54,7 +54,7 @@ async function getdata() {
 			})
 			.catch(() => {
 				loader.style.display = 'none';
-				result.innerHTML = `<h3 class="msg">error accured </h3>`;
+				result.innerHTML = `<h3 class="msg">This Data cant fetch duo to http request i hardly sorry for this </h3>`;
 			});
 	}
 }

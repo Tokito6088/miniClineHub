@@ -7,10 +7,10 @@ const key = `461f6c83`;
 
 async function getdata() {
 	const inputdata = await inputbar.value;
-	const url = `http://www.omdbapi.com/?t=${inputdata}&apikey=${key}`;
+	const url = await `http://www.omdbapi.com?t=${inputdata}&apikey=${key}`;
 
 	if (inputdata.length <= 0) {
-		result.innerHTML = `<h3>Please Enter Movie Name</h3>`;
+		result.innerHTML = await `<h3>Please Enter Movie Name</h3>`;
 	} else {
 		loader.style.display = 'flex';
 		await fetch(url)
